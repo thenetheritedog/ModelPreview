@@ -1,0 +1,67 @@
+:root {
+    --clr-dark-a0: #000000;
+    --clr-light-a0: #ffffff;
+
+    /** Theme primary colors */
+    --clr-primary-a0: #bd0000;
+    --clr-primary-a10: #c9371d;
+    --clr-primary-a20: #d55538;
+    --clr-primary-a30: #df6f52;
+    --clr-primary-a40: #e8876d;
+    --clr-primary-a50: #ef9f88;
+
+    /** Theme surface colors */
+    --clr-surface-a0: #121212;
+    --clr-surface-a10: #282828;
+    --clr-surface-a20: #3f3f3f;
+    --clr-surface-a30: #575757;
+    --clr-surface-a40: #717171;
+    --clr-surface-a50: #8b8b8b;
+
+    /** Theme tonal surface colors */
+    --clr-surface-tonal-a0: #161c18;
+    --clr-surface-tonal-a10: #2b312d;
+    --clr-surface-tonal-a20: #424744;
+    --clr-surface-tonal-a30: #5a5f5b;
+    --clr-surface-tonal-a40: #737774;
+    --clr-surface-tonal-a50: #8d918f;
+
+    /** Success colors */
+    --clr-success-a0: #22946e;
+    --clr-success-a10: #47d5a6;
+    --clr-success-a20: #9ae8ce;
+
+    /** Warning colors */
+    --clr-warning-a0: #a87a2a;
+    --clr-warning-a10: #d7ac61;
+    --clr-warning-a20: #ecd7b2;
+
+    /** Danger colors */
+    --clr-danger-a0: #9c2121;
+    --clr-danger-a10: #d94a4a;
+    --clr-danger-a20: #eb9e9e;
+
+    /** Info colors */
+    --clr-info-a0: #21498a;
+    --clr-info-a10: #4077d1;
+    --clr-info-a20: #92b2e5;
+}
+
+body {
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.fill-screen {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+#main-content {
+    background-color: var(--clr-surface-a0);
+}
+
