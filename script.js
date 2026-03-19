@@ -1,15 +1,26 @@
-let modelCards = [...document.getElementsByClassName("model-selection-card")];
-if(modelCards.length === 0) console.error("Failed to find any model cards");
+document.querySelectorAll('.model-selection-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const title = card.querySelector('.card-title')?.textContent || '—';
+        const sub = card.querySelector('.card-sub')?.textContent || '';
+        document.getElementById('active-model-name').textContent = title.toUpperCase();
+        document.getElementById('active-model-meta').textContent = sub;
+        document.getElementById('empty-state').style.opacity = '0';
+        document.querySelectorAll('.model-selection-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
 
-for(var card of modelCards) {
-    card.addEventListener("click", (evt) => {
-        let modelSrc = evt.currentTarget.dataset.modelSrc;
-        if(!modelSrc) {
-            console.error("data-model-src attribute not found on model selection card");
-            return;
-        }
-
-        let previewSection = document.getElementById("model-preview");
-        previewSection.src = modelSrc;
+        document.getElementById("model-preview").src = card.dataset.modelSrc;
     });
-}
+});
+
+document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+
+        const filter = chip.dataset.filter;
+        document.querySelectorAll('.model-selection-card').forEach(card => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.style.display = match ? '' : 'none';
+        });
+    });
+});

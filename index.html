@@ -2,47 +2,128 @@
 <html lang="en">
     <head>
         <title>Model Viewer</title>
-        <link rel="stylesheet" type="text/css" href="/style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
 
         <div id="main-content" class="fill-screen">
-            <div id="content-left">
+
+            <aside id="content-left">
                 <div id="side-menu">
-                    <div id="side-menu-inner">
-                        <div id="side-menu-tabs"></div>
-                        <div id="model-selection-area">
-                            <div class="model-selection-card" data-model-src="/models/PlayerDesignAttempt2.glb">
-                                <img src="/thumbnails/KnightModelPreview.png">
-                                <p>Player Design<br>Attempt 2</p>
-                            </div>
-                            <div class="model-selection-card" data-model-src="/models/Sword.glb">
-                                <img src="/thumbnails/Render.png">
-                                <p>Sword</p>
-                            </div>
-                            <div class="model-selection-card">
-                                <img src="https://picsum.photos/100/100">
-                                <p>Model 3</p>
-                            </div>
-                            <div class="model-selection-card">
-                                <img src="https://picsum.photos/100/100">
-                                <p>Model 4</p>
-                            </div>
-                        </div>
-                        <div id="menu-footer">
-                            <h1>Models</h1>
+                    <div id="brand-bar">
+                        <span id="brand-name">MODEL VIEWER</span>
+                        <div id="brand-tag">ASSET LIBRARY</div>
+                    </div>
+
+                    <div id="filter-bar">
+                        <!-- <div id="search-wrap"> -->
+                        <!--     <svg class="search-icon" viewBox="0 0 24 24" fill="none"> -->
+                        <!--         <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/> -->
+                        <!--         <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/> -->
+                        <!--     </svg> -->
+                        <!--     <input type="text" placeholder="Search assets..." id="search-input"> -->
+                        <!-- </div> -->
+                        <div id="filter-chips">
+                            <button class="chip active" data-filter="all">All</button>
+                            <button class="chip" data-filter="characters">Characters</button>
+                            <button class="chip" data-filter="">Props</button>
                         </div>
                     </div>
+
+                    <div id="model-selection-area">
+
+                        <div class="model-selection-card" data-model-src="/models/PlayerDesignAttempt2.glb" data-category="characters">
+                            <div class="card-thumb">
+                                <img src="/thumbnails/KnightModelPreview.png" alt="Player Design">
+                                <div class="card-overlay">
+                                    <span class="view-label">PREVIEW</span>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <p class="card-title">Player Design</p>
+                                <p class="card-sub">Character</p>
+                            </div>
+                            <div class="card-accent"></div>
+                        </div>
+
+                        <div class="model-selection-card" data-model-src="/models/Sword.glb" data-category="props">
+                            <div class="card-thumb">
+                                <img src="/thumbnails/Render.png" alt="Sword">
+                                <div class="card-overlay">
+                                    <span class="view-label">PREVIEW</span>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <p class="card-title">Sword</p>
+                                <p class="card-sub">Prop</p>
+                            </div>
+                            <div class="card-accent"></div>
+                        </div>
+
+                        <div class="model-selection-card placeholder-card" data-category="none">
+                            <div class="card-thumb">
+                                <div class="thumb-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <p class="card-title">Model 3</p>
+                                <p class="card-sub">No source</p>
+                            </div>
+                            <div class="card-accent"></div>
+                        </div>
+
+                        <div class="model-selection-card placeholder-card" data-category="none">
+                            <div class="card-thumb">
+                                <div class="thumb-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <p class="card-title">Model 4</p>
+                                <p class="card-sub">No source</p>
+                            </div>
+                            <div class="card-accent"></div>
+                        </div>
+
+                    </div>
+
+                    <div id="menu-footer">
+                        <div id="footer-divider"></div>
+                        <span id="footer-count"><span id="asset-count">4</span> ASSETS</span>
+                        <div id="footer-divider"></div>
+                    </div>
                 </div>
-            </div>
+            </aside>
+
             <div id="content-right">
+                <div id="viewer-hud">
+                    <div id="hud-left">
+                        <div id="active-model-name">- SELECT A MODEL -</div>
+                        <div id="active-model-meta">No asset loaded</div>
+                    </div>
+                </div>
+
+                <div id="empty-state">
+                    <div id="empty-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 6L6 20v24l26 14 26-14V20L32 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M 32 34 v 24 M 6 20 l 26 14 l 26 -14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <p id="empty-title">No Model Selected</p>
+                    <p id="empty-sub">Choose an asset from the library to begin</p>
+                </div>
+
                 <model-viewer id="model-preview"
-                    src=""
-                    ar camera-controls touch-action="pan-y"></model-viewer>
+                    src="" autoplay
+                    ar camera-controls touch-action="pan-y"
+                    shadow-intensity="1"
+                    exposure="1"></model-viewer>
             </div>
         </div>
 
