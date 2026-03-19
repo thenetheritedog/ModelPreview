@@ -16,13 +16,13 @@
                     <div id="side-menu-inner">
                         <div id="side-menu-tabs"></div>
                         <div id="model-selection-area">
-                            <div class="model-selection-card">
+                            <div class="model-selection-card" data-model-src="/models/PlayerDesignAttempt2.glb">
                                 <img src="/thumbnails/KnightModelPreview.png">
                                 <p>Player Design<br>Attempt 2</p>
                             </div>
-                            <div class="model-selection-card">
-                                <img src="https://picsum.photos/100/100">
-                                <p>Model 2</p>
+                            <div class="model-selection-card" data-model-src="/models/Sword.glb">
+                                <img src="/thumbnails/Render.png">
+                                <p>Sword</p>
                             </div>
                             <div class="model-selection-card">
                                 <img src="https://picsum.photos/100/100">
@@ -41,9 +41,11 @@
             </div>
             <div id="content-right">
                 <model-viewer id="model-preview"
-                    src="/models/PlayerDesignAttempt2.glb"
+                    src=""
                     ar camera-controls touch-action="pan-y"></model-viewer>
             </div>
         </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
