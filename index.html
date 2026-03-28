@@ -6,6 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
@@ -20,23 +21,16 @@
                     </div>
 
                     <div id="filter-bar">
-                        <!-- <div id="search-wrap"> -->
-                        <!--     <svg class="search-icon" viewBox="0 0 24 24" fill="none"> -->
-                        <!--         <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/> -->
-                        <!--         <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/> -->
-                        <!--     </svg> -->
-                        <!--     <input type="text" placeholder="Search assets..." id="search-input"> -->
-                        <!-- </div> -->
                         <div id="filter-chips">
                             <button class="chip active" data-filter="all">All</button>
                             <button class="chip" data-filter="characters">Characters</button>
-                            <button class="chip" data-filter="">Props</button>
+                            <button class="chip" data-filter="props">Props</button>
                         </div>
                     </div>
 
                     <div id="model-selection-area">
 
-                        <div class="model-selection-card" data-model-src="/models/PlayerDesignAttempt2.glb" data-category="characters">
+                        <div class="model-selection-card" data-model-src="/models/PlayerDesignAttempt2.glb" data-model-download="/models/PlayerDesignAttempt2.glb" data-category="characters">
                             <div class="card-thumb">
                                 <img src="/thumbnails/KnightModelPreview.png" alt="Player Design">
                                 <div class="card-overlay">
@@ -47,10 +41,13 @@
                                 <p class="card-title">Player Design</p>
                                 <p class="card-sub">Character</p>
                             </div>
+                            <a class="card-download-btn" href="/models/PlayerDesignAttempt2.glb" download="PlayerDesign.glb" title="Download model" onclick="event.stopPropagation()">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
                             <div class="card-accent"></div>
                         </div>
 
-                        <div class="model-selection-card" data-model-src="/models/Sword.glb" data-category="props">
+                        <div class="model-selection-card" data-model-src="/models/Sword.glb" data-model-download="/models/Sword.glb" data-category="props">
                             <div class="card-thumb">
                                 <img src="/thumbnails/Render.png" alt="Sword">
                                 <div class="card-overlay">
@@ -61,13 +58,16 @@
                                 <p class="card-title">Sword</p>
                                 <p class="card-sub">Prop</p>
                             </div>
+                            <a class="card-download-btn" href="/models/Sword.glb" download="Sword.glb" title="Download model" onclick="event.stopPropagation()">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
                             <div class="card-accent"></div>
                         </div>
 
                         <div class="model-selection-card placeholder-card" data-category="none">
                             <div class="card-thumb">
                                 <div class="thumb-placeholder">
-                                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <i class="fa-solid fa-cube"></i>
                                 </div>
                             </div>
                             <div class="card-info">
@@ -80,7 +80,7 @@
                         <div class="model-selection-card placeholder-card" data-category="none">
                             <div class="card-thumb">
                                 <div class="thumb-placeholder">
-                                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <i class="fa-solid fa-cube"></i>
                                 </div>
                             </div>
                             <div class="card-info">
@@ -110,10 +110,7 @@
 
                 <div id="empty-state">
                     <div id="empty-icon">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M32 6L6 20v24l26 14 26-14V20L32 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                            <path d="M 32 34 v 24 M 6 20 l 26 14 l 26 -14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        </svg>
+                        <i class="fa-solid fa-cubes"></i>
                     </div>
                     <p id="empty-title">No Model Selected</p>
                     <p id="empty-sub">Choose an asset from the library to begin</p>
@@ -130,3 +127,4 @@
         <script src="script.js"></script>
     </body>
 </html>
+

@@ -334,9 +334,8 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--clr-text-dim);
+    font-size: 26px;
 }
-
-.thumb-placeholder svg { width: 28px; height: 28px; }
 
 .card-info {
     display: flex;
@@ -515,13 +514,10 @@ body {
 }
 
 #empty-icon {
-    width: 72px;
-    height: 72px;
+    font-size: 64px;
     color: var(--clr-surface-a30);
     animation: floatIcon 4s ease-in-out infinite;
 }
-
-#empty-icon svg { width: 100%; height: 100%; }
 
 @keyframes floatIcon {
     0%, 100% { transform: translateY(0); }
@@ -560,3 +556,44 @@ body {
     #content-right { height: 60vh; }
     #side-menu { border-radius: 0; border-right: none; border-bottom: 1px solid rgba(189,0,0,0.25); }
 }
+
+
+.card-download-btn {
+    margin-left: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: var(--clr-surface-a20);
+    border: 1px solid var(--clr-surface-a30);
+    border-radius: var(--radius-sm);
+    color: var(--clr-text-mid);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.card-download-btn i {
+    font-size: 13px;
+}
+
+.model-selection-card:hover .card-download-btn {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card-download-btn:hover {
+    background: var(--clr-primary-a0);
+    border-color: var(--clr-primary-a0);
+    color: white;
+}
+
+.placeholder-card .card-download-btn {
+    display: none;
+}
+
