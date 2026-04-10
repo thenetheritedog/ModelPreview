@@ -13,7 +13,12 @@ document.querySelectorAll('.model-selection-card').forEach(card => {
         const iViewer = document.getElementById("image-preview");
         const vViewer = document.getElementById("video-preview");
 
-        const hideAll = () => { mViewer.hidden = true; iViewer.hidden = true; vViewer.hidden = true; };
+        const hideAll = () => { 
+            mViewer.hidden = true;
+            iViewer.hidden = true;
+            vViewer.hidden = true;
+        };
+
         switch(type) {
             case "model":
                 hideAll();
